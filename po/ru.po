@@ -403,7 +403,7 @@ msgid ""
 "The average of three numbers is [three]. The average of two of these numbers "
 "is [two]. What is the third number? [option_answers]"
 msgstr ""
-"Среднее арифметическое трёх чисел — [three]. Среднее арифметическое трёх "
+"Среднее арифметическое трёх чисел — [three]. Среднее арифметическое двух из них "
 "чисел — [two]. Каково третье число? [option_answers]"
 
 #: ../data/games.xml.h:62
