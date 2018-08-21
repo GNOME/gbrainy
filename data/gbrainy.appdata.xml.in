@@ -2,6 +2,7 @@
 <component type="desktop">
   <name>gbrainy</name>
   <id>org.gnome.gbrainy.desktop</id>
+  <launchable type="desktop-id">org.gnome.gbrainy.desktop</launchable>
   <metadata_license>CC0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <_summary>gbrainy is a game to train memory, arithmetical and logical capabilities with many sorts of exercises of different difficulty levels</_summary>
@@ -17,6 +18,9 @@
     memory exercises, etc.
     </_p>
   </description>
+  <provides>
+    <id>gbrainy.desktop</id>
+  </provides>
   <screenshots>
     <screenshot height="705" width="632">
       <image>https://gent.softcatala.org/jmas/gbrainy/gbrainy-screenshot-appdata.png</image>
