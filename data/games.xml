@@ -786,20 +786,20 @@
 		<_question>I go south on an evening when the sun shines. To which side of me will my shadow fall? [option_answers]</_question>
 		<string _text = "Choose one of the following:" x = "0.1" y = "0.15" size = "large"/>
 
-			<option x = "0.3" y = "0.3" width ="0.45" height ="0.1" order ="randomized" correct = "yes">
-				<string _text = "[option_prefix] To my left"  x = "0.05"  y = "0.02" size = "large"/>
+			<option x = "0.1" y = "0.3" width ="0.65" height ="0.1" order ="randomized" correct = "yes">
+				<string _text = "[option_prefix] To my left"  x = "0.1"  y = "0.02" size = "large"/>
 			</option>
 
-			<option x = "0.3" y = "0.4" width ="0.45" height ="0.1" order ="randomized">
-				<string _text = "[option_prefix] To my right" x = "0.05" y = "0.02" size = "large"/>
+			<option x = "0.1" y = "0.4" width ="0.65" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] To my right" x = "0.1" y = "0.02" size = "large"/>
 			</option>
 
-			<option x = "0.3" y = "0.5" width ="0.45" height ="0.1" order ="randomized">
-				<string _text = "[option_prefix] Behind me" x = "0.05" y = "0.02" size = "large"/>
+			<option x = "0.1" y = "0.5" width ="0.65" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] Behind me" x = "0.1" y = "0.02" size = "large"/>
 			</option>
 
-			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
-				<string _text = "[option_prefix] In front of me" x = "0.05" y = "0.02" size = "large"/>
+			<option x = "0.1" y = "0.6" width ="0.65" height ="0.1" order ="randomized">
+				<string _text = "[option_prefix] In front of me" x = "0.1" y = "0.02" size = "large"/>
 			</option>
         <_rationale>If I go south then east is to my left and in the evening the shadow falls east.</_rationale>
 		<answer>To my left</answer>
@@ -845,7 +845,7 @@
 			<option x = "0.3" y = "0.6" width ="0.45" height ="0.1" order ="randomized">
 				<string text = "[option_prefix] [answer_d]" x = "0.05" y = "0.02" size = "large"/>
 			</option>
-        <_rationale>Using the Pythagorean theorem, the solution is 2 by the square root of ([dist_a]^2 + [dist_b]^2). </_rationale>
+        <_rationale>Using the Pythagorean theorem, the solution is 2 by the square root of ([dist_a]^2 + [dist_b]^2).</_rationale>
 		<answer>[answer_a]</answer>
 	</game>
 
