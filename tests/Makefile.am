@@ -34,7 +34,6 @@ ASSEMBLIES = \
 	$(NUNIT_LIBS)			\
 	$(MONO_ADDINS_LIBS)		\
 	-r:$(top_builddir)/src/gbrainy.Core.dll	\
-    -r:$(top_builddir)/src/gbrainy.Games.dll	\
 	-r:$(top_builddir)/src/gbrainy.exe
 
 MONO_PATH = $(top_builddir)/src
@@ -48,7 +47,7 @@ $(CLASSICAL): $(CSFILES_CLASSICAL) $(top_builddir)/src/gbrainy.exe
 	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_CLASSICAL) $(ASSEMBLIES) $(RESSOURCES)
 
 $(GAMES): $(CSFILES_GAMES) $(top_builddir)/src/gbrainy.exe
-	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_GAMES) $(ASSEMBLIES) $(RESSOURCES)
+	$(CSC) -out:$@ $(CSFLAGS) $(CSFILES_GAMES) $(ASSEMBLIES) -r:../src/gbrainy.Games.dll $(RESSOURCES)
 
 all: $(CORE) $(CLASSICAL) $(GAMES)
 
