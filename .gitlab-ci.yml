@@ -3,7 +3,7 @@ image: mono:latest
 build:
   stage: build
   before_script: 
-    - apt-get update && apt-get install libtool autotools automake
+    - apt-get update && apt-get install libtool autotools-dev automake intltoollibcanberra-gtk3-0, libgtk3.0-cil-dev, librsvg2-dev, gnome-doc-utils
   script: 
     - ./autogen.sh && ./configure --enable-tests
     - make 
