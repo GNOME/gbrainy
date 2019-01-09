@@ -1,0 +1,10 @@
+image: mono:latest
+
+build:
+  stage: build
+  before_script: 
+  script: 
+    - ./autogen.sh && ./configure --enable-tests
+    - make 
+    - cd tests && make
+
