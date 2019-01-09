@@ -32,17 +32,13 @@ namespace gbrainy.Test
 			new DefaultServices ().RegisterServices ();
 
 			string mono_path = Environment.GetEnvironmentVariable ("MONO_PATH");
-            Console.WriteLine("**** RegisterDefaultServices. Dir 1" + mono_path);
 
 			if (String.IsNullOrEmpty (mono_path))
 				mono_path = ".";
 
 			// Configuration
-            Console.WriteLine("**** RegisterDefaultServices. Dir 2" + mono_path);
             mono_path = Path.GetFullPath(mono_path);
-
-            Console.WriteLine("**** RegisterDefaultServices. Dir 3" + mono_path);
-			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, mono_path);
+ 			ServiceLocator.Instance.GetService <IConfiguration> ().Set (ConfigurationKeys.AssembliesDir, mono_path);
 		}
 	}
 }
