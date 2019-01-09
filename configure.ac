@@ -10,7 +10,7 @@ m4_define([gbrainy_version], concat(gbrainy_version_major.gbrainy_version_minor.
 m4_define([gbrainy_asm_version], [gbrainy_version_major.gbrainy_version_minor.gbrainy_version_revision.0])
 
 AC_INIT(gbrainy, [gbrainy_version],
-	[https://gitlab.gnome.org/GNOME/gbrainy/issues/")])
+	[https://gitlab.gnome.org/GNOME/gbrainy/issues/)])
 
 AC_CONFIG_SRCDIR(src/Core/)
 
