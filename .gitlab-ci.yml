@@ -3,6 +3,7 @@ image: mono:latest
 build:
   stage: build
   before_script: 
+    - apt-get update && apt-get install libtool autotools automake
   script: 
     - ./autogen.sh && ./configure --enable-tests
     - make 
