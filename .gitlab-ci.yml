@@ -1,4 +1,4 @@
-image: mono:latest
+image: mono:4.8
 
 build:
   stage: build
