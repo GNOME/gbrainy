@@ -17,7 +17,6 @@ desktop_in_files=	\
 	gbrainy.desktop.in	
 
 desktop_files=$(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
 
 Applicationsdir = $(datadir)/applications
 Applications_DATA = $(desktop_files)
@@ -28,7 +27,6 @@ pkgconfig_DATA = gbrainy.pc
 appdatadir = $(datadir)/metainfo
 appdata_in_files = gbrainy.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
-@INTLTOOL_XML_RULE@
 
 tango_icons = 				\
 	app-graphics/gbrainy.png	\

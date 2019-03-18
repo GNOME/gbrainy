@@ -9,12 +9,12 @@ src/Clients/Classical/Dialogs/CustomGameDialog.cs
 src/Clients/Classical/Dialogs/PdfExportDialog.cs
 src/Clients/Classical/Dialogs/PlayerHistoryDialog.cs
 src/Clients/Classical/Dialogs/PreferencesDialog.cs
-[type: gettext/glade]src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui
-[type: gettext/glade]src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui
-[type: gettext/glade]src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui
-[type: gettext/glade]src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui
+src/Clients/Classical/Dialogs/ui/CustomGameDialog.ui
+src/Clients/Classical/Dialogs/ui/PdfExportDialog.ui
+src/Clients/Classical/Dialogs/ui/PlayerHistoryDialog.ui
+src/Clients/Classical/Dialogs/ui/PreferencesDialog.ui
 src/Clients/Classical/gbrainy.cs
-[type: gettext/glade]src/Clients/Classical/gbrainy.ui
+src/Clients/Classical/gbrainy.ui
 src/Clients/Classical/MonoAddinsStrings.cs
 src/Clients/Classical/Widgets/BrowseFile.cs
 src/Clients/Classical/Widgets/GameDrawingArea.cs
