@@ -89,6 +89,15 @@ case $CC in
 *xlc | *xlc\ * | *lcc | *lcc\ *) am_opt=--include-deps;;
 esac
 
+echo "Running aclocal..."
+aclocal || exit 1
+echo "Running autoconf..."
+autoconf || exit 1
+echo "Running autoheader..."
+autoheader || exit 1
+echo "Running automake..."
+automake --gnu --add-missing --copy || exit 1
+
 conf_flags="--enable-maintainer-mode --enable-compile-warnings" #--enable-iso-c
 
 cd "$ORIGDIR"
