@@ -66,6 +66,15 @@ check_autotool_version $AUTOMAKE 1.10
   }
 }
 
+grep "^AM_GLIB_GNU_GETTEXT" configure.ac >/dev/null && {
+  grep "sed.*POTFILES" $srcdir/configure.ac >/dev/null || \
+  (glib-gettextize --version) < /dev/null > /dev/null 2>&1 || {
+    echo
+    echo "**Error**: You must have \`glib-devel' (or glib2-devel) installed to compile $PROJECT."
+    DIE=1
+  }
+}
+
 (which yelp-build)|| {
 	echo "**Error**: You must have yelp-tools installed to compile $PROJECT."
 	DIE=1
@@ -89,14 +98,73 @@ case $CC in
 *xlc | *xlc\ * | *lcc | *lcc\ *) am_opt=--include-deps;;
 esac
 
-echo "Running aclocal..."
-aclocal || exit 1
-echo "Running autoconf..."
-autoconf || exit 1
-echo "Running autoheader..."
-autoheader || exit 1
-echo "Running automake..."
-automake --gnu --add-missing --copy || exit 1
+for coin in `find $srcdir -name configure.ac -print`
+do 
+  dr=`dirname $coin`
+  if test -f $dr/NO-AUTO-GEN; then
+    echo skipping $dr -- flagged as no auto-gen
+  else
+    echo processing $dr
+    macrodirs=`sed -n -e 's,AM_ACLOCAL_INCLUDE(\(.*\)),\1,gp' < $coin`
+    ( cd $dr
+      aclocalinclude="$ACLOCAL_FLAGS"
+      for k in $macrodirs; do
+  	if test -d $k; then
+          aclocalinclude="$aclocalinclude -I $k"
+  	##else 
+	##  echo "**Warning**: No such directory \`$k'.  Ignored."
+        fi
+      done
+      if grep "^AM_GNU_GETTEXT" configure.ac >/dev/null; then
+	if grep "sed.*POTFILES" configure.ac >/dev/null; then
+	  : do nothing -- we still have an old unmodified configure.ac
+	else
+	  echo "Creating $dr/aclocal.m4 ..."
+	  test -r $dr/aclocal.m4 || touch $dr/aclocal.m4
+	  echo "Running gettextize...  Ignore non-fatal messages."
+	  echo "no" | gettextize --force --copy
+	  echo "Making $dr/aclocal.m4 writable ..."
+	  test -r $dr/aclocal.m4 && chmod u+w $dr/aclocal.m4
+        fi
+      fi
+      if grep "^AM_GNOME_GETTEXT" configure.ac >/dev/null; then
+	echo "Creating $dr/aclocal.m4 ..."
+	test -r $dr/aclocal.m4 || touch $dr/aclocal.m4
+	echo "Running gettextize...  Ignore non-fatal messages."
+	echo "no" | gettextize --force --copy
+	echo "Making $dr/aclocal.m4 writable ..."
+	test -r $dr/aclocal.m4 && chmod u+w $dr/aclocal.m4
+      fi
+      if grep "^AM_GLIB_GNU_GETTEXT" configure.ac >/dev/null; then
+	echo "Creating $dr/aclocal.m4 ..."
+	test -r $dr/aclocal.m4 || touch $dr/aclocal.m4
+	echo "Running gettextize...  Ignore non-fatal messages."
+	echo "no" | glib-gettextize --force --copy
+	echo "Making $dr/aclocal.m4 writable ..."
+	test -r $dr/aclocal.m4 && chmod u+w $dr/aclocal.m4
+      fi
+      if grep "^AC_PROG_INTLTOOL" configure.ac >/dev/null ||
+         grep "^IT_PROG_INTLTOOL" configure.ac >/dev/null; then
+        echo "Running intltoolize..."
+        intltoolize --copy --force --automake
+      fi
+      if grep "^AM_PROG_LIBTOOL" configure.ac >/dev/null; then
+	echo "Running libtoolize..."
+	libtoolize --force --copy
+      fi
+      echo "Running $ACLOCAL $aclocalinclude ..."
+      $ACLOCAL $aclocalinclude
+      if grep "^AM_CONFIG_HEADER" configure.ac >/dev/null; then
+	echo "Running autoheader..."
+	autoheader
+      fi
+      echo "Running $AUTOMAKE --gnu $am_opt ..."
+      $AUTOMAKE --add-missing --gnu $am_opt
+      echo "Running autoconf ..."
+      autoconf
+    )
+  fi
+done
 
 conf_flags="--enable-maintainer-mode --enable-compile-warnings" #--enable-iso-c
 
