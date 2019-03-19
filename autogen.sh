@@ -166,13 +166,11 @@ do
   fi
 done
 
-conf_flags="--enable-maintainer-mode --enable-compile-warnings" #--enable-iso-c
-
 cd "$ORIGDIR"
 
 if test x$NOCONFIGURE = x; then
-  echo Running $srcdir/configure $conf_flags "$@" ...
-  $srcdir/configure $conf_flags "$@" \
+  echo Running $srcdir/configure "$@" ...
+  $srcdir/configure "$@" \
   && echo Now type \`make\' to compile $PROJECT  || exit 1
 else
   echo Skipping configure process.
