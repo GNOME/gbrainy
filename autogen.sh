@@ -56,16 +56,6 @@ ACLOCAL=aclocal
 check_autotool_version $ACLOCAL 1.10
 check_autotool_version $AUTOMAKE 1.10
 
-(grep "^AM_PROG_LIBTOOL" configure.ac >/dev/null) && {
-  (libtool --version) < /dev/null > /dev/null 2>&1 || {
-    echo
-    echo "**Error**: You must have \`libtool' installed to compile $PROJECT."
-    echo "Get ftp://ftp.gnu.org/pub/gnu/libtool-1.2d.tar.gz"
-    echo "(or a newer version if it is available)"
-    DIE=1
-  }
-}
-
 grep "^AM_GLIB_GNU_GETTEXT" configure.ac >/dev/null && {
   grep "sed.*POTFILES" $srcdir/configure.ac >/dev/null || \
   (glib-gettextize --version) < /dev/null > /dev/null 2>&1 || {
@@ -147,10 +137,6 @@ do
          grep "^IT_PROG_INTLTOOL" configure.ac >/dev/null; then
         echo "Running intltoolize..."
         intltoolize --copy --force --automake
-      fi
-      if grep "^AM_PROG_LIBTOOL" configure.ac >/dev/null; then
-	echo "Running libtoolize..."
-	libtoolize --force --copy
       fi
       echo "Running $ACLOCAL $aclocalinclude ..."
       $ACLOCAL $aclocalinclude

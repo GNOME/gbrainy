@@ -26,8 +26,6 @@ AM_MAINTAINER_MODE
 
 IT_PROG_INTLTOOL([0.35.0])
 
-AM_PROG_LIBTOOL
-
 AM_PATH_GLIB_2_0
 
 dnl --- Check for mono and mcs
