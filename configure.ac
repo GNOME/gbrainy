@@ -202,6 +202,7 @@ tests/Makefile
 data/Makefile
 data/gbrainy.pc
 help/Makefile
+po/Makefile.in
 tools/Defines.cs
 ])
 
