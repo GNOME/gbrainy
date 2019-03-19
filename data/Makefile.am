@@ -14,9 +14,12 @@ datafiles = $(datadir)/games/gbrainy
 man_MANS = gbrainy.6
 
 desktop_in_files=	\
-	gbrainy.desktop.in	
+	gbrainy.desktop.in
 
 desktop_files=$(desktop_in_files:.desktop.in=.desktop)
+
+$(desktop_DATA): %.desktop: %.desktop.in
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 Applicationsdir = $(datadir)/applications
 Applications_DATA = $(desktop_files)
@@ -28,6 +31,9 @@ appdatadir = $(datadir)/metainfo
 appdata_in_files = gbrainy.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 
+$(appdata_DATA): $(appdata_in_files)
+	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
+ 
 tango_icons = 				\
 	app-graphics/gbrainy.png	\
 	app-graphics/gbrainy.svg	\
