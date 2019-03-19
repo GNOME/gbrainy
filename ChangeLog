@@ -1,5 +1,0 @@
-2019-03-19  gettextize  <bug-gnu-gettext@gnu.org>
-
-	* configure.ac (AM_GNU_GETTEXT_VERSION): Bump to 0.19.8.
-
-use git log
