@@ -195,7 +195,6 @@ src/Clients/WebForms/AssemblyInfo.cs
 src/Core/AssemblyInfo.cs
 src/Games/AssemblyInfo.cs
 Makefile
-po/Makefile.in
 src/Makefile
 tools/Makefile
 src/Core/Makefile
