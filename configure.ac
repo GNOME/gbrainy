@@ -113,8 +113,6 @@ dnl -- Intl
 GETTEXT_PACKAGE=gbrainy
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
-AM_GLIB_GNU_GETTEXT
-
 
 dnl -- NUnit required for (optional) unit tests
 NUNIT_REQUIRED=2.4.7
