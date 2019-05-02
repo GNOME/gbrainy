@@ -1,0 +1,3 @@
+option('addins', type: 'feature', value: 'auto', description: 'build tests')
+option('tests', type: 'boolean', value: false, description: 'build tests')
+option('docs', type: 'boolean', value: true, description: 'build documentation')
