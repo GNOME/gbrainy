@@ -1,9 +1,0 @@
-prefix=@prefix@
-exec_prefix=${prefix}
-libdir=${exec_prefix}/lib
-
-Name: gbrainy
-Description: Play games that challenge your logic, verbal, calculation and memory abilities
-Version: @VERSION@
-Libs: -r:${libdir}/gbrainy/gbrainy.Core.dll -r:Mono.Cairo -r:Mono.Posix
-
