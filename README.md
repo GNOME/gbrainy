@@ -9,7 +9,7 @@ It provides the following types of games:
 * Memory trainers. Games designed to challenge your short term memory.
 * Verbal analogies. Games that challenge your verbal aptitude. 
 
-<a href='https://flathub.org/apps/details/org.gnome.gbrainy'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
+[![Download on Flathub](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Flathub-badge-en.svg/240px-Flathub-badge-en.svg.png)](https://flathub.org/apps/details/org.gnome.gbrainy)
 
 ## Useful links
 
