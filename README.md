@@ -15,6 +15,5 @@ It provides the following types of games:
 
 - Homepage: <https://wiki.gnome.org/Apps/gbrainy>
 - Report issues: <https://gitlab.gnome.org/GNOME/gbrainy/issues/>
-- Mailing list: <https://groups.google.com/group/gbrainy>
 - Donate: <https://www.gnome.org/friends/>
 - Translate: <https://wiki.gnome.org/TranslationProject>
