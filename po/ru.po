@@ -1150,7 +1150,7 @@ msgstr "Это единственное слово, которое не отно
 #: ../data/verbal_analogies.xml.h:128
 msgid "It is the only unit that does not belong to the metric system."
 msgstr ""
-"Это единственная единица измерения, не принадлежащая к метрической системе."
+" Это единственная единица измерения, не принадлежащая к метрической системе."
 
 #: ../data/verbal_analogies.xml.h:129
 msgid "Kilometer"
