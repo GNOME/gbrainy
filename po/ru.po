@@ -1667,7 +1667,7 @@ msgstr "кнопка / нажать | ключ (в замке)"
 
 #: ../data/verbal_analogies.xml.h:260
 msgid "cage | zoo | zoological garden"
-msgstr "клетка | зоопарк | зоосад"
+msgstr "клетка | зоопарк | зоологический сад"
 
 #: ../data/verbal_analogies.xml.h:261
 msgid "car / garage | plane"
