@@ -691,7 +691,7 @@ msgstr ""
 
 #: ../data/verbal_analogies.xml.h:7
 msgid "A turtle is inside a shell and a letter is inside an envelope."
-msgstr "Черепаха передвигается в панцире, а письмо храниться в конверте в конверте."
+msgstr "Черепаха передвигается в панцире, а письмо храниться в конверте."
 
 #: ../data/verbal_analogies.xml.h:8
 msgid "Abstinence"
@@ -1692,7 +1692,7 @@ msgstr "монеты"
 
 #: ../data/verbal_analogies.xml.h:267
 msgid "composer | songwriter | lyricist"
-msgstr "композитор | песенник" | "лирик"
+msgstr "композитор | песенник | лирик"
 
 #: ../data/verbal_analogies.xml.h:268
 msgid "concept / idea | obsession"
